@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tic Tac Toe</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="app" role="application" aria-label="Zero Katta game">
+    <header>
+      <div class="title">
+        <div class="logo">TTT</div>
+        <div>
+          <h1>Tic Tac Toe</h1>
+          <p class="lead">Cross & Circle — fun, tiny, quick</p>
+        </div>
+      </div>
+
+      <div class="controls">
+        <div class="segmented" role="tablist" aria-label="Mode choice">
+          <button id="twoPlayerBtn" class="active" aria-pressed="true">2-Player</button>
+          <button id="onePlayerBtn" aria-pressed="false">1-Player (vs CPU)</button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="board-wrap" aria-labelledby="boardlabel">
+        <div style="display:flex;gap:12px;align-items:center;width:100%;justify-content:space-between">
+          <div id="boardlabel" class="status">Turn: <span id="turnText">X</span></div>
+          <div style="font-size:.85rem;color:var(--muted)">Tip: Click any cell to play</div>
+        </div>
+
+        <div id="board" class="board" role="grid" aria-label="game board">
+          <!-- Cells inserted by JS -->
+        </div>
+
+        <div style="display:flex;gap:8px;align-items:center;width:100%;justify-content:center">
+          <button id="restartBtn" class="btn ghost">Restart Round</button>
+          <button id="resetScoreBtn" class="btn">Reset Score</button>
+        </div>
+
+        <footer id="message" style="margin-top:8px;color:var(--muted)">Good luck!</footer>
+      </section>
+
+      <aside class="panel" aria-labelledby="scoreTitle">
+        <div id="scoreTitle" style="font-weight:800">Scoreboard</div>
+
+        <div class="score">
+          <div class="item"><span>X</span><span id="xScore">0</span></div>
+          <div class="item"><span>Draws</span><span id="draws">0</span></div>
+          <div class="item"><span>O</span><span id="oScore">0</span></div>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:6px;margin-top:8px">
+          <div style="font-weight:700">Options</div>
+          <label style="display:flex;gap:8px;align-items:center">
+            <input id="firstX" type="checkbox" checked />
+            <span style="color:var(--muted)">X starts each round</span>
+          </label>
+
+          <div style="display:flex;gap:8px;margin-top:6px">
+            <button id="newGameBtn" class="btn primary">New Game</button>
+            <button id="undoBtn" class="btn">Undo (1)</button>
+          </div>
+        </div>
+      </aside>
+    </main>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>
